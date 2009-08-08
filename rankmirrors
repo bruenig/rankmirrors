@@ -39,8 +39,8 @@ usage() {
 
 version() {
   echo "rankmirrors (pacman) 3.3.0"
-	echo "Copyright (c) 2006-2009 Pacman Development Team <pacman-dev@archlinux.org>."
-	echo "Copyright (C) 2002-2006 Judd Vinet <jvinet@zeroflux.org>."
+  echo "Copyright (c) 2006-2009 Pacman Development Team <pacman-dev@archlinux.org>."
+  echo "Copyright (C) 2002-2006 Judd Vinet <jvinet@zeroflux.org>."
   echo
   echo "This is free software; see the source for copying conditions."
   echo "There is NO WARRANTY, to the extent permitted by law."
@@ -182,5 +182,3 @@ while read line; do
   fi
 done <"$FILE"
 finaloutput
-
-# vim: set ts=2 sw=2 noet:
