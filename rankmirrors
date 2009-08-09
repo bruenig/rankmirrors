@@ -35,7 +35,7 @@ usage() {
 	echo "  -t, --times    only output mirrors and their response times"
 	echo "  -u, --url      test a specific url"
 	echo "  -v, --verbose  be verbose in ouptut"
-	exit
+	exit 0
 }
 
 version() {
@@ -44,7 +44,7 @@ version() {
 	echo
 	echo "This is free software; see the source for copying conditions."
 	echo "There is NO WARRANTY, to the extent permitted by law."
-	exit
+	exit 0
 }
 
 err() {
@@ -99,7 +99,7 @@ finaloutput() {
 			[[ $NUM -ne 0 && $numiterator -ge $NUM ]] && break
 		done
 	fi
-	exit
+	exit 0
 }
 
 
@@ -158,7 +158,7 @@ if [[ $CHECKURL ]]; then
 	[[ $VERBOSE ]] && echo "Testing $url..."
 	time=$(gettime "$url")
 	echo "$URL : $time"
-	exit
+	exit 0
 fi
 
 # Get url results from mirrorfile, fill up the array, and so on
