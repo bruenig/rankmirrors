@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #   rankmirrors - read a list of mirrors from a file and rank them by speed
-#   Generated from rankmirrors.in; do not edit by hand.
+#   @configure_input@
 #
 #   Copyright (c) 2009 Matthew Bruenig <matthewbruenig@gmail.com>
 #
@@ -39,7 +39,7 @@ usage() {
 }
 
 version() {
-	echo "rankmirrors (pacman) 3.3.0"
+	echo "rankmirrors (pacman) @PACKAGE_VERSION@"
 	echo "Copyright (c) 2009 Matthew Bruenig <matthewbruenig@gmail.com>."
 	echo
 	echo "This is free software; see the source for copying conditions."
@@ -73,7 +73,7 @@ getfetchurl() {
 	if [[ -z $reponame || $reponame = $replacedurl ]]; then
 		echo "fail"
 	else
-		fetchurl="${replacedurl}/$reponame.db.tar.gz"
+		fetchurl="${replacedurl}/$reponame@DBEXT@"
 		echo "$fetchurl"
 	fi
 }
