@@ -1,8 +1,7 @@
 #!/bin/bash
 #   rankmirrors - read a list of mirrors from a file and rank them by speed
 #
-#   Copyright (c) 2006-2009 Pacman Development Team <pacman-dev@archlinux.org>
-#   Copyright (C) 2002-2006 Judd Vinet <jvinet@zeroflux.org>
+#   Copyright (c) 2009 Matthew Bruenig <matthewbruenig@gmail.com>
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -39,8 +38,7 @@ usage() {
 
 version() {
   echo "rankmirrors (pacman) 3.3.0"
-  echo "Copyright (c) 2006-2009 Pacman Development Team <pacman-dev@archlinux.org>."
-  echo "Copyright (C) 2002-2006 Judd Vinet <jvinet@zeroflux.org>."
+  echo "Copyright (c) 2009 Matthew Bruenig <matthewbruenig@gmail.com>."
   echo
   echo "This is free software; see the source for copying conditions."
   echo "There is NO WARRANTY, to the extent permitted by law."
