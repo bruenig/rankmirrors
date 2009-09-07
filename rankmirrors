@@ -63,12 +63,14 @@ gettime() {
 
 # getfetchurl serverurl (e.g. getturl http://foo.com/core/os/i686)
 # if $repo is in the line, then assumes core
+# if $arch is in the line, then assumes $(uname -m)
 # returns a fetchurl (e.g. http://foo.com/core/os/i686/core.db.tar.gz)
+ARCH="$(uname -m)"
 getfetchurl() {
 	local strippedurl="${1%/}"
 
 	local replacedurl="${strippedurl//'$repo'/core}"
-	replacedurl="${replacedurl//'$arch'/i686}"
+	replacedurl="${replacedurl//'$arch'/$ARCH}"
 
 	local tmp="${replacedurl%/*}"
 	tmp="${tmp%/*}"
