@@ -65,15 +65,19 @@ gettime() {
 # if $repo is in the line, then assumes core
 # returns a fetchurl (e.g. http://foo.com/core/os/i686/core.db.tar.gz)
 getfetchurl() {
-	strippedurl="${1%/}"
-	replacedurl="${strippedurl//'$repo'/core}"
-	tmp1="${replacedurl%/*}"
-	tmp2="${tmp1%/*}"
-	reponame="${tmp2##*/}"
+	local strippedurl="${1%/}"
+
+	local replacedurl="${strippedurl//'$repo'/core}"
+	replacedurl="${replacedurl//'$arch'/i686}"
+
+	local tmp="${replacedurl%/*}"
+	tmp="${tmp%/*}"
+
+	local reponame="${tmp##*/}"
 	if [[ -z $reponame || $reponame = $replacedurl ]]; then
 		echo "fail"
 	else
-		fetchurl="${replacedurl}/$reponame.db.tar.gz"
+		local fetchurl="${replacedurl}/$reponame.db.tar.gz"
 		echo "$fetchurl"
 	fi
 }
